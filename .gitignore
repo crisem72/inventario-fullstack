@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Environments
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+logs
+*.log
+log.txt
+
+# TypeScript builds
+dist/
+build/
+
+# VSCode
+.vscode/
+
+# React build
+frontend/build/
