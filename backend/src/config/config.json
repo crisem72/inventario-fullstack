@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "crisem1221",
+    "database": "inventario_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
