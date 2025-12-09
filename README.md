@@ -194,6 +194,7 @@ PUT	/stock/:productoId	Actualizar stock diario
 Movimientos
 Método	Ruta	Descripción
 GET	/movimientos/hoy	Movimientos del día
+
 👤 Usuarios de Prueba
 Administrador
 Email: admin@inventario.com
@@ -251,19 +252,6 @@ Abrir:
 
 📌 http://localhost:5173
 
-📊 Capturas Sugeridas
-
-Agregá estas capturas al README si querés dejarlo TOP:
-
-Pantalla de login
-
-Panel del empleado
-
-Modal de actualización de stock
-
-Dashboard admin (totales y movimientos)
-
-Tabla de productos
 
 🏁 Conclusión
 
@@ -278,9 +266,7 @@ Este proyecto FullStack cumple con:
 ✔ Control de stock y movimientos
 ✔ Código prolijo y modularizado
 
-Ideal para entrega académica o portfolio profesional.
 
 👨‍💻 Autor
 
 Proyecto desarrollado por Miño Cristhian Emanuel (Crisem).
-Aplicación FullStack presentada como proyecto académico.
