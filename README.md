@@ -1,4 +1,4 @@
-📘 README – Sistema de Gestión de Inventario FullStack
+📘 Sistema de Gestión de Inventario – FullStack
 🧩 Sistema de Gestión de Inventario para Comercios Locales
 
 Proyecto Final – Aplicación Web FullStack (Frontend + Backend)
@@ -60,60 +60,62 @@ Desarrollar un sistema de inventario simple, rápido y seguro que permita:
 👥 Roles del Sistema
 Administrador
 
-Puede registrar nuevos usuarios empleados.
+Registrar nuevos usuarios empleados
 
-Puede crear, editar y eliminar productos.
+Crear, editar y eliminar productos
 
-Puede ver el dashboard completo con:
+Ver dashboard completo con:
 
-ventas por unidad
+Unidades vendidas
 
-ventas por gramos
+Gramos vendidos
 
-importe total generado
+Importe total
 
-lista de movimientos del día
+Movimientos del día
 
-Puede cargar productos nuevos.
+Gestionar el inventario completo
 
 Empleado
 
-Solo puede actualizar stock diario.
+Actualizar stock diario
 
-El sistema calcula automáticamente la venta del día.
+Ver venta calculada automáticamente
 
-No puede modificar productos.
+No puede editar productos
 
 📦 Funcionalidades Principales
 ✔ Gestión de Productos
 
 Crear productos
 
-Editar productos
+Editarlos
 
-Eliminar productos
+Eliminarlos
 
-Definir si un producto es:
+Definir tipo de producto:
 
 Por unidad
 
-Por peso (gramos)
+Por peso (gramos/kilos)
 
-✔ Actualización de Stock Diario
+✔ Actualización Automática de Stock
 
-Se ingresa el stock real del final del día.
+Se ingresa el stock real del día
 
-El sistema calcula automáticamente:
+El sistema calcula:
 
-cantidad vendida
+unidades vendidas
 
-gramos vendidos (si corresponde)
+gramos vendidos
 
-importe generado
+kilos equivalente
+
+importe total
 
 ✔ Movimientos Automáticos
 
-Cada actualización genera un registro en movimientos_stock que incluye:
+Cada modificación de stock genera un registro con:
 
 Producto
 
@@ -137,47 +139,49 @@ Total de unidades vendidas
 
 Total de gramos vendidos
 
-Importe total
+Importe total del día
 
-Tabla con todos los movimientos del día
+Tabla con todos los movimientos
 
 🏛 Arquitectura del Proyecto
-backend/
-│ src/
-│ ├─ controllers/
-│ ├─ routes/
-│ ├─ models/
-│ ├─ config/
-│ ├─ middleware/
-│ └─ migrations/
-frontend/
-│ src/
-│ ├─ pages/
-│ ├─ components/
-│ ├─ context/
-│ ├─ services/
-│ ├─ hooks/
-
-
-Patrón utilizado: MVC + separación de capas
+inventario-fullstack/
+│
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── models/
+│   │   ├── config/
+│   │   ├── middleware/
+│   │   └── migrations/
+│   └── package.json
+│
+└── frontend/
+    ├── src/
+    │   ├── pages/
+    │   ├── components/
+    │   ├── context/
+    │   ├── services/
+    │   └── hooks/
+    └── package.json
 
 🔐 Autenticación
 
-Sistema basado en:
+Basada en:
 
 JWT (JSON Web Token)
 
 bcrypt para hash de contraseñas
 
-Middleware de autenticación que protege rutas
+Middleware de autenticación
 
-Roles incorporados en el payload del token
+Validación de roles
 
-🗄 Endpoints Principales (Resumen)
+🗄 Endpoints Principales
 Auth
 Método	Ruta	Descripción
-POST	/auth/register	Crear usuario admin/empleado
-POST	/auth/login	Iniciar sesión y obtener token
+POST	/auth/register	Registrar admin o empleado
+POST	/auth/login	Iniciar sesión
 Productos
 Método	Ruta	Descripción
 GET	/productos	Listar productos
@@ -186,15 +190,27 @@ PUT	/productos/:id	Editar producto
 DELETE	/productos/:id	Eliminar producto
 Stock
 Método	Ruta	Descripción
-PUT	/stock/:productoId	Actualizar stock del día
+PUT	/stock/:productoId	Actualizar stock diario
 Movimientos
 Método	Ruta	Descripción
 GET	/movimientos/hoy	Movimientos del día
+👤 Usuarios de Prueba
+Administrador
+Email: admin@inventario.com
+Password: admin123
+
+Empleado
+Email: empleado@inventario.com
+Password: empleado123
+
+
+Podés ajustar estos usuarios según la BD que tengas cargada.
+
 🔧 Instalación del Proyecto
 
 Clonar el repositorio:
 
-git clone https://github.com/tu_usuario/inventario-fullstack.git
+git clone https://github.com/crisem72/inventario-fullstack.git
 cd inventario-fullstack
 
 ▶ Backend
@@ -202,7 +218,7 @@ cd backend
 npm install
 
 
-Configurar .env:
+Crear archivo .env:
 
 DB_HOST=127.0.0.1
 DB_USER=postgres
@@ -211,26 +227,60 @@ DB_NAME=inventario_db
 JWT_SECRET=secret123
 
 
-Crear tablas:
+Migraciones:
 
 npx sequelize-cli db:migrate
 
 
-Iniciar:
+Iniciar servidor:
 
 npm run dev
 
+
+Backend disponible en:
+
+📌 http://localhost:4000
+
 💻 Frontend
-cd frontend
+cd ../frontend
 npm install
 npm run dev
 
 
-Acceder a:
+Abrir:
 
-👉 http://localhost:5173
+📌 http://localhost:5173
 
-👉 Backend corre en http://localhost:4000
+📊 Capturas Sugeridas
 
+Agregá estas capturas al README si querés dejarlo TOP:
 
-Proyecto académico — Miño Cristhian Emanuel.
+Pantalla de login
+
+Panel del empleado
+
+Modal de actualización de stock
+
+Dashboard admin (totales y movimientos)
+
+Tabla de productos
+
+🏁 Conclusión
+
+Este proyecto FullStack cumple con:
+
+✔ React + Node + TypeScript
+✔ PostgreSQL + Sequelize
+✔ JWT + bcrypt
+✔ Rol Admin y Empleado
+✔ Productos por unidad y por peso
+✔ Dashboard profesional
+✔ Control de stock y movimientos
+✔ Código prolijo y modularizado
+
+Ideal para entrega académica o portfolio profesional.
+
+👨‍💻 Autor
+
+Proyecto desarrollado por Miño Cristhian Emanuel (Crisem).
+Aplicación FullStack presentada como proyecto académico.
